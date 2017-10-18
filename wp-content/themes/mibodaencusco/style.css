@@ -6,4 +6,73 @@ Description: Custom theme for Mi Boda en Cusco website.
 Version: 0.1
 */
 
+.widget_polylang {
+  display: inline-block;
+}
 
+li.lang-item {
+  list-style-type: none;
+  font-size: 18px;
+}
+
+.mbc li.lang-item a {
+  color: #265414;
+}
+
+.events-maker li.lang-item a {
+  color: #84af3e;
+}
+
+.lang-selector-img {
+  display: inline-block;
+}
+
+.lang-selector {
+  width: 80%;
+  margin: auto;
+  text-align: right;
+}
+
+.section-title {
+  font-size: 4rem;
+}
+
+img.section-title-img {
+  width: 175px;
+  height: 175px;
+  margin-right: -90px;
+}
+
+.section-title-container > * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+h1.section-title {
+  margin-top: 20px;
+  margin-left: -35px;
+}
+
+.contact-form-container {
+  min-width: 100%;
+  height: auto;
+  font-size: 25px;
+}
+
+img#logo-em {
+  margin-right: 10px;
+}
+
+.menu .contenido {
+  cursor: pointer;
+}
+
+#servicios1 .qs-texto li:before {
+  content: url('img/flechah.png');
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.wpcf7-form {
+  margin-top: 50px;
+}

@@ -27,20 +27,29 @@
   </div>
   <div class="seccion menu" id="menu">
     <div class="menu-mbc">
-      <div class="item-menu-mbc" id="somos">Somos</div>
-      <div class="item-menu-mbc" id="servicios">Servicios</div>
-      <div class="item-menu-mbc" id="portafolio">Portafolio</div>
-      <div class="item-menu-mbc" id="contacto">Contacto</div>
+      <div class="item-menu-mbc" id="somos"><?php _e( 'Somos', 'mibodaencusco' ); ?></div>
+      <div class="item-menu-mbc" id="servicios"><?php _e( 'Servicios', 'mibodaencusco' ); ?></div>
+      <div class="item-menu-mbc" id="portafolio"><?php _e( 'Portafolio', 'mibodaencusco' ); ?></div>
+      <div class="item-menu-mbc" id="contacto"><?php _e( 'Contacto', 'mibodaencusco' ); ?></div>
     </div>
   </div>
+  <!-- Language selector -->
+  <div class="lang-selector mbc">
+    <?php if ( is_active_sidebar( 'menu-widgets' ) ) : ?>
+      <img src="<?php bloginfo('template_url'); ?>/img/lang.png" height="50" width="50" class="lang-selector-img">
+      <?php dynamic_sidebar( 'menu-widgets' ); ?>
+    <?php endif; ?>
+  </div>
+  <!-- /Language selector -->
+  <?php query_posts( array('page_id' => pll_get_post(30) ) ); ?>
+  <?php the_post(); ?>
   <div class="nueva-seccion" id="somos1">
     <div class="cont-titulo-p">
-      <div class="titulo-img">
-        <img src="<?php bloginfo('template_url' ); ?>/img/somos.png" width="100%;">
+      <div class="section-title-container">
+        <img src="<?php bloginfo('template_url'); ?>/img/logo_marron.png" class="section-title-img">
+        <h1 class="section-title"><?php the_title(); ?></h1>
       </div>
     </div>
-    <?php query_posts( array('page_id' => pll_get_posts(30) ) ); ?>
-    <?php the_post(); ?>
     <div class="contenido-seccion">
       <div class="conte-somos">
         <?php the_content(); ?>
@@ -52,15 +61,16 @@
       </div>
     </div>
   </div>
+  <?php query_posts( array('page_id' => pll_get_post(32) ) ); ?>
+  <?php the_post(); ?>
   <div class="nueva-seccion" id="servicios1">
     <div class="cont-titulo-p">
-      <div class="titulo-img">
-        <img src="<?php bloginfo('template_url' ); ?>/img/servicios.png" width="100%;">
+      <div class="section-title-container">
+        <img src="<?php bloginfo('template_url'); ?>/img/logo_marron.png" class="section-title-img">
+        <h1 class="section-title"><?php the_title(); ?></h1>
       </div>
     </div>
     <div class="conte-seccion">
-      <?php query_posts( array('page_id' => pll_get_posts(32) ) ); ?>
-      <?php the_post(); ?>
       <div class="conte-servicios">
         <div id="servicios-esp">
           <div class="conte-servicios">
@@ -77,23 +87,25 @@
   </div>
   <div class="nueva-seccion" id="portafolio1">
     <div class="cont-titulo-p">
-      <div class="titulo-img">
-        <img src="<?php bloginfo('template_url' ); ?>/img/portafolio.png" width="100%;">
+      <div class="section-title-container">
+        <img src="<?php bloginfo('template_url'); ?>/img/logo_marron.png" class="section-title-img">
+        <h1 class="section-title"><?php _e( 'Portafolio', 'mibodaencusco' ); ?></h1>
       </div>
     </div>
-    <div class="conte-portafolio">
-      <?php echo do_shortcode('[wonderplugin_gallery id="1"]'); ?>
-    </div>
+    <?php echo do_shortcode('[wonderplugin_gallery id="1"]'); ?>
     <div class="sep">
       <div class="sep-sep">
-        <img src="img/sep.png" width="100%;">
+        <img src="<?php bloginfo('template_url' ); ?>/img/sep.png" width="100%;">
       </div>
     </div>
   </div>
+  <?php query_posts( array('page_id' => pll_get_post(50) ) ); ?>
+  <?php the_post(); ?>
   <div class="nueva-seccion" id="contacto1">
     <div class="cont-titulo-p">
-      <div class="titulo-img">
-        <img src="<?php bloginfo('template_url' ); ?>/img/contacto.png" width="100%;">
+      <div class="section-title-container">
+        <img src="<?php bloginfo('template_url'); ?>/img/logo_marron.png" class="section-title-img">
+        <h1 class="section-title"><?php the_title(); ?></h1>
       </div>
     </div>
     <div class="conte-contacto">
@@ -102,10 +114,8 @@
           <img src="<?php bloginfo('template_url' ); ?>/img/pajaro.png" height="100%">
         </div>
       </div>
-      <?php query_posts( array('page_id' => pll_get_posts(50) ) ); ?>
-      <?php the_post(); ?>
       <div class="contac-imagen">
-        <div class="contact-conte">
+        <div class="contact-form-container">
           <?php the_content(); ?>
         </div>
       </div>

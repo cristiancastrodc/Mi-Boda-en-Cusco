@@ -32,7 +32,7 @@
           <img src="<?php bloginfo('template_url' ); ?>/img/flecha.png">
         </div>
         <div class="contenido">
-          Quienes Somos
+          <?php _e( 'Quienes Somos', 'mibodaencusco' ); ?>
         </div>
       </div>
       <div class="item" id="portafolio">
@@ -40,7 +40,7 @@
           <img src="<?php bloginfo('template_url' ); ?>/img/flecha.png">
         </div>
         <div class="contenido">
-          Portafolio
+          <?php _e( 'Portafolio', 'mibodaencusco' ); ?>
         </div>
       </div>
       <div class="item" id="servicios">
@@ -48,7 +48,7 @@
           <img src="<?php bloginfo('template_url' ); ?>/img/flecha.png">
         </div>
         <div class="contenido">
-          Servicios
+          <?php _e( 'Servicios', 'mibodaencusco' ); ?>
         </div>
       </div>
       <div class="item" id="contacto">
@@ -56,11 +56,19 @@
           <img src="<?php bloginfo('template_url' ); ?>/img/flecha.png">
         </div>
         <div class="contenido">
-          Contacto
+          <?php _e( 'Contacto', 'mibodaencusco' ); ?>
         </div>
       </div>
     </div>
   </div>
+  <!-- Language selector -->
+  <div class="lang-selector events-maker">
+    <?php if ( is_active_sidebar( 'menu-widgets' ) ) : ?>
+      <img src="<?php bloginfo('template_url'); ?>/img/lang.png" height="50" width="50" class="lang-selector-img">
+      <?php dynamic_sidebar( 'menu-widgets' ); ?>
+    <?php endif; ?>
+  </div>
+  <!-- /Language selector -->
   <div class="l1">
     <div class="l11"></div>
     <div class="l12"></div>
@@ -71,7 +79,7 @@
     <div class="verde-i">
       <img src="<?php bloginfo('template_url' ); ?>/img/flechai.png">
     </div>
-    <?php query_posts( array('page_id' => pll_get_posts(20) ) ); ?>
+    <?php query_posts( array('page_id' => pll_get_post(20) ) ); ?>
     <?php the_post(); ?>
     <div class="qs-cont-contenido">
       <div class="qs-titulo">
@@ -93,8 +101,8 @@
   <div class="portafolio" id="portafolio1">
     <div class="p-cabeza">
       <div class="cont-titulo">
-        <div class="titulo">
-          PORTAFOLIO
+        <div class="titulo text-uppercase">
+          <?php _e('Portafolio', 'mibodaencusco'); ?>
         </div>
       </div>
       <div class="flecha">
@@ -107,7 +115,7 @@
       </div>
     </div>
   </div>
-  <?php query_posts( array('page_id' => pll_get_posts(27) ) ); ?>
+  <?php query_posts( array('page_id' => pll_get_post(27) ) ); ?>
   <?php the_post(); ?>
   <div class="cont-qs serv" id="servicios1">
     <div class="verde-i">
@@ -137,7 +145,7 @@
   <div class="l2">
     <div class="l11"></div>
   </div>
-  <?php query_posts( array('page_id' => pll_get_posts(58) ) ); ?>
+  <?php query_posts( array('page_id' => pll_get_post(58) ) ); ?>
   <?php the_post(); ?>
   <div class="portafolio contacto" id="contacto1">
     <div class="p-cabeza">
@@ -150,11 +158,7 @@
         <img src="<?php bloginfo('template_url' ); ?>/img/flechad.png">
       </div>
     </div>
-    <div class="cont-fotos" style="flex-direction: column; align-items: center;">
-      <div class="fotos blanco contact">
-       <?php the_content(); ?>
-      </div>
-    </div>
+    <?php the_content(); ?>
     <div class="l3">
       <div class="l11"></div>
     </div>
@@ -166,33 +170,9 @@
   <script src="<?php bloginfo('template_url' ); ?>/js/bootstrap.js"></script>
    <script src="<?php bloginfo('template_url' ); ?>/js/jquery-scrollto.js"></script>
   <script src="<?php bloginfo('template_url' ); ?>/js/jquery.sticky.js"></script>
-  <script defer src="<?php bloginfo('template_url' ); ?>/js/jquery.flexslider.js"></script>
-  <script src="<?php bloginfo('template_url' ); ?>/js/local.js"></script>
   <script>
     $(document).ready(function() {
       $('.cont-menu').sticky({topSpacing:0});
-    });
-
-    $(window).load(function(){
-      $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 5,
-        asNavFor: '#slider'
-      });
-
-      $('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: true,
-        sync: "#carousel",
-        slideshowSpeed: 2500,
-        smoothHeight: true,
-      });
     });
 
     $('#top').click(function(){
